@@ -21,7 +21,7 @@ export default function Login() {
           <div className="container mt-5 col-5">
             <div className="text-primary mb-4">
               <h3 style={{ marginLeft: "11rem", fontWeight: "bold" }}>
-                Login{" "}
+                Login2{" "}
               </h3>
             </div>
             <div className="mb-4">

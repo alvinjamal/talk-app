@@ -12,7 +12,7 @@ function App() {
           <Link to="/Register">Register</Link>
           <Link to="/Forgot">Forgot</Link>
         </nav>
-
+        1
         <Routes>
           <Route path="/Register" element={<Register />} />
 

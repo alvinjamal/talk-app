@@ -72,7 +72,7 @@ export default function Register() {
           }}
           variant="primary"
         >
-          Register
+          Register1
         </Button>
       </div>
     </div>

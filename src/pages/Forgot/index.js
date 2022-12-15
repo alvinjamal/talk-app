@@ -21,7 +21,7 @@ export default function Forgot() {
           <div className="container mt-5 col-5 ">
             <div className="text-primary mb-4">
               <h3 style={{ marginLeft: "8rem", fontWeight: "bold" }}>
-                Forgot Password
+                Forgot Password1
               </h3>
             </div>
             <div className="mb-4">
