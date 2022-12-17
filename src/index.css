@@ -12,7 +12,7 @@ code {
     monospace;
 }
 nav {
-  width: 100vw;
+  width: 101vw;
   display: flex;
   background-color: salmon;
   flex-direction: row;

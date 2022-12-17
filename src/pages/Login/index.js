@@ -3,7 +3,6 @@ import { Button } from "react-bootstrap";
 // import { Link } from "react-router-dom";
 // import "./style.css";
 import "../../index.css";
-// import Logo from "../../img/toko.png";
 
 export default function Login() {
   return (
@@ -20,15 +19,15 @@ export default function Login() {
         <div className="row">
           <div className="container mt-5 col-5">
             <div className="text-primary mb-4">
-              <h3 style={{ marginLeft: "11rem", fontWeight: "bold" }}>
-                Login2{" "}
-              </h3>
+              <h4 style={{ marginLeft: "11rem", fontWeight: "bold" }}>
+                Login{" "}
+              </h4>
             </div>
             <div className="mb-4">
               <h6>Hi, Welcome back! </h6>
             </div>
             <div>
-              <h4 className="text-secondary">E-mail</h4>
+              <h5 className="text-secondary">E-mail</h5>
               <input
                 type="email"
                 className="form-control"
@@ -37,7 +36,7 @@ export default function Login() {
                 aria-describedby="basic-addon1"
                 style={{ height: "48px", marginTop: "14px", width: "30rem" }}
               />
-              <h4 className="text-secondary">Password</h4>
+              <h5 className="text-secondary">Password</h5>
               <input
                 type="password"
                 className="form-control"

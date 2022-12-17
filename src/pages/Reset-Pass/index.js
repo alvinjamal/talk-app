@@ -1,9 +1,10 @@
 import React from "react";
 import { Button } from "react-bootstrap";
-import "./style.css";
 // import { Link } from "react-router-dom";
+// import "./style.css";
+import "../../index.css";
 
-export default function Forgot() {
+export default function Reset() {
   return (
     <div>
       <div
@@ -16,17 +17,17 @@ export default function Forgot() {
         }}
       >
         <div className="row">
-          <div className="container mt-5 col-5 ">
+          <div className="container mt-5 col-5">
             <div className="text-primary mb-4">
-              <h3 style={{ marginLeft: "8rem", fontWeight: "bold" }}>
-                Forgot Password
-              </h3>
+              <h4 style={{ marginLeft: "11rem", fontWeight: "bold" }}>
+                Reset Password
+              </h4>
             </div>
             <div className="mb-4">
-              <h6>You’ll get messages soon on your E-mail </h6>
+              <h6>Hi, Welcome back! </h6>
             </div>
             <div>
-              <h5 className="text-secondary">E-mail</h5>
+              {/* <h5 className="text-secondary">E-mail</h5>
               <input
                 type="email"
                 className="form-control"
@@ -34,11 +35,20 @@ export default function Forgot() {
                 aria-label="email"
                 aria-describedby="basic-addon1"
                 style={{ height: "48px", marginTop: "14px", width: "30rem" }}
+              /> */}
+              <h5 className="text-secondary">Password</h5>
+              <input
+                type="password"
+                className="form-control"
+                placeholder="Password"
+                aria-label="password"
+                aria-describedby="basic-addon1"
+                style={{ height: "48px", marginTop: "14px", width: "30rem" }}
               />
             </div>
             <div>
               <Button
-                href="Reset-Pass"
+                href="Chat-List"
                 className="btn3 btn-lg btn-round text-light"
                 style={{
                   marginLeft: "4rem",
@@ -49,7 +59,7 @@ export default function Forgot() {
                 }}
                 variant="primary"
               >
-                Send
+                Login
               </Button>
             </div>
           </div>

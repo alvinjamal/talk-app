@@ -1,7 +1,6 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 import "../../index.css";
-// import Logo from "../../img/toko.png";
 
 export default function Register() {
   return (
@@ -25,7 +24,7 @@ export default function Register() {
             <h5>Let’s create your account!</h5>
           </div>
           <div>
-            <h5>Name</h5>
+            <h5 className="text-secondary">Name</h5>
             <input
               type="name"
               className="form-control mb-2"
@@ -36,7 +35,7 @@ export default function Register() {
             />
           </div>
           <div>
-            <h5>E-mail</h5>
+            <h5 className="text-secondary mb-1">E-mail</h5>
             <input
               type="email"
               className="form-control mb-2"
@@ -47,7 +46,7 @@ export default function Register() {
             />
           </div>
           <div>
-            <h5>Password</h5>
+            <h5 className="text-secondary">Password</h5>
             <input
               type="password"
               className="form-control"
@@ -72,7 +71,7 @@ export default function Register() {
           }}
           variant="primary"
         >
-          Register1
+          Register
         </Button>
       </div>
     </div>
