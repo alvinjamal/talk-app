@@ -1,14 +1,13 @@
 import React from "react";
 import { Button, Row, Col } from "react-bootstrap";
-import Alvin from "../../img/alvin.jpeg";
+import Img from "../../img/img8.png";
 import Bell from "../../img/Union.png";
 // import "./style.css";
-// import Add from "../../img/add.png";
 
 export default function Profile() {
   return (
     <Row>
-      <Col>
+      <Col style={{ width: "20%" }}>
         <div>
           <div className="container">
             <div className="wrap mt-4" style={{ marginLeft: "6rem" }}>
@@ -16,7 +15,7 @@ export default function Profile() {
                 <div className="chat mt-4">
                   <Button className="text-dark mt-3 " variant="outline-light">
                     <img
-                      src={Alvin}
+                      src={Img}
                       alt=""
                       width={65}
                       height={60}
@@ -37,49 +36,53 @@ export default function Profile() {
               <h5 className="mt-3">083816767374</h5>
               <p>Tap to change phone number</p>
             </div>
-            <div className="mt-4">
-              <span></span>
-              ____________________________________________________________________________
-            </div>
+            <div
+              className="mt-4"
+              style={{ borderBottom: "1px solid", width: "30rem" }}
+            />
             <div className="user mt-4" style={{ marginLeft: "2rem" }}>
               <h5 style={{ fontWeight: "bold" }}>@vin</h5>
               <p>Username</p>
             </div>
-            <div>
-              ____________________________________________________________________________
-            </div>
+            <div
+              className="mt-4"
+              style={{ borderBottom: "1px solid", width: "30rem" }}
+            />
             <div className="mt-4" style={{ marginLeft: "2rem" }}>
               <h6 style={{ fontWeight: "bold" }}>
                 I’m Senior Frontend Developer from Microsoft
               </h6>
               <p className="paraf text-secondary">Bio:</p>
             </div>
-            <div className="account" style={{ marginLeft: "2rem" }}>
+            <div className="account mb-4 mt-4" style={{ marginLeft: "2rem" }}>
               <h4 style={{ marginLeft: "2rem", fontWeight: "bold" }}>
                 Setting
               </h4>
               <img src={Bell} alt="" />
-              <Button variant="outline-">Notification and Sounds</Button>
+              <Button variant="outline-light text-dark">
+                Notification and Sounds
+              </Button>
+              <div>
+                <Button variant="outline-light text-dark">
+                  Privaty and Security
+                </Button>
+              </div>
+              <div>
+                <Button variant="outline-light text-dark">
+                  Data and Stronge
+                </Button>
+              </div>
+              <div>
+                <Button variant="outline-light text-dark">Chat settings</Button>
+              </div>
+              <div>
+                <Button variant="outline-light text-dark">Devices</Button>
+              </div>
             </div>
           </div>
         </div>
       </Col>
-      <Col>
-        <div>
-          <div
-            // src={Add}
-            // alt=""
-            style={{
-              position: "absolute",
-              width: "70rem",
-              height: "45rem",
-              backgroundColor: "blue",
-              left: "30rem",
-              top: "3,2rem",
-            }}
-          />
-        </div>
-      </Col>
+      <Col></Col>
     </Row>
   );
 }

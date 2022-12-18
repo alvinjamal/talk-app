@@ -14,14 +14,14 @@ export default function Register() {
       }}
     >
       <div className="row">
-        <div className="container mt-5 col-5 ">
+        <div className="container mt-4 col-5 ">
           <div className="text-primary mb-4">
             <h3 style={{ marginLeft: "11rem", fontWeight: "bold" }}>
               Register
             </h3>
           </div>
           <div className="mb-4">
-            <h5>Let’s create your account!</h5>
+            <h5>Let’s Create Your Account!</h5>
           </div>
           <div>
             <h5 className="text-secondary">Name</h5>

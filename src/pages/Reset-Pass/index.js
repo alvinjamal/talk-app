@@ -17,30 +17,21 @@ export default function Reset() {
         }}
       >
         <div className="row">
-          <div className="container mt-5 col-5">
+          <div className="container col-5" style={{ marginTop: "6rem" }}>
             <div className="text-primary mb-4">
               <h4 style={{ marginLeft: "11rem", fontWeight: "bold" }}>
                 Reset Password
               </h4>
             </div>
             <div className="mb-4">
-              <h6>Hi, Welcome back! </h6>
+              <h5>Please Change The New Password!</h5>
             </div>
             <div>
-              {/* <h5 className="text-secondary">E-mail</h5>
-              <input
-                type="email"
-                className="form-control"
-                placeholder="Email"
-                aria-label="email"
-                aria-describedby="basic-addon1"
-                style={{ height: "48px", marginTop: "14px", width: "30rem" }}
-              /> */}
-              <h5 className="text-secondary">Password</h5>
+              <h5 className="text-secondary">Change Password</h5>
               <input
                 type="password"
                 className="form-control"
-                placeholder="Password"
+                placeholder="New Password"
                 aria-label="password"
                 aria-describedby="basic-addon1"
                 style={{ height: "48px", marginTop: "14px", width: "30rem" }}
@@ -59,7 +50,7 @@ export default function Reset() {
                 }}
                 variant="primary"
               >
-                Login
+                Change Password
               </Button>
             </div>
           </div>

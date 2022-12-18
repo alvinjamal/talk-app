@@ -1,8 +1,12 @@
 .sort {
-  margin-left: 5rem;
+  margin-left: 12rem;
   font-weight: bold;
 }
 
 .text {
+  font-weight: bold;
+}
+
+.tele {
   font-weight: bold;
 }
