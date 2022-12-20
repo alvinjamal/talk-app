@@ -10,8 +10,11 @@ import Img3 from "../../img/img3.png";
 import Img4 from "../../img/img4.png";
 import Img5 from "../../img/img5.png";
 import Img6 from "../../img/img6.png";
+import Icon1 from "../../img/icon1.png";
+import Icon2 from "../../img/icon2.png";
+import Icon3 from "../../img/icon3.png";
 
-export default function ChatList() {
+export default function Home() {
   const [message, setMessage] = useState("");
   const [socket, setSocket] = useState(null);
   const [messages, setMessages] = useState([]);
@@ -52,28 +55,28 @@ export default function ChatList() {
           <div className="container">
             <div className="wrap mt-4" style={{ marginLeft: "2rem" }}>
               <div className="row text-primary">
-                <Dropdown style={{ marginLeft: "16rem" }}>
-                  <Dropdown.Toggle variant="primary" id="dropdown-basic">
-                    ---
-                  </Dropdown.Toggle>
-                  <Dropdown.Menu>
-                    <Dropdown.Item href="#/action-1">Setting</Dropdown.Item>
-                    <Dropdown.Item href="#/Profile">Profile</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Calls</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">
-                      Save Messages
-                    </Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">
-                      Invite Friends
-                    </Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">
-                      Telegram FAQ
-                    </Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown>
-                <h2 className="tele">Talk App</h2>
-              </div>
-              <div className="icon col-3 mt-4">
+                <div
+                  className="create container m-4 text-center"
+                  style={{
+                    width: "18rem",
+                    height: "3rem",
+                    marginLeft: "1rem",
+                    backgroundColor: "blue",
+                    borderRadius: "10px",
+                  }}
+                >
+                  <div>
+                    <Button className="icon mt-1" variant="primary">
+                      <img src={Icon1} alt="" />
+                    </Button>
+                    <Button className="icon mt-1" variant="primary">
+                      <img src={Icon2} alt="" />
+                    </Button>
+                    <Button className="icon mt-1" variant="primary">
+                      <img src={Icon3} alt="" />
+                    </Button>
+                  </div>
+                </div>
                 <input
                   src={Img1}
                   alt=""
@@ -85,7 +88,7 @@ export default function ChatList() {
                   style={{
                     height: "48px",
                     marginTop: "14px",
-                    width: "40rem",
+                    width: "40srem",
                     borderRadius: "10px",
                   }}
                 />
@@ -304,6 +307,9 @@ export default function ChatList() {
                 </Dropdown.Item>
                 <Dropdown.Item onClick={() => setGroup("Calvin Flores")}>
                   Calvin Flores
+                </Dropdown.Item>
+                <Dropdown.Item onClick={() => setGroup("Theresa Webb")}>
+                  Theresa Webb
                 </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>

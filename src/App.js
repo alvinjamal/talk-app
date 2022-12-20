@@ -5,6 +5,7 @@ import Forgot from "./pages/Forgot";
 import ChatList from "./pages/Chat-List";
 import Reset from "./pages/Reset-Pass";
 import Profile from "./pages/Profile";
+import Home from "./pages/Home";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Link to="/Chat-List">Chat List</Link>
           <Link to="/Reset-Pass">Reset Password</Link>
           <Link to="/Profile">Profile</Link>
+          <Link to="/Home">Home</Link>
         </nav>
         <Routes>
           <Route path="/Register" element={<Register />} />
@@ -30,6 +32,8 @@ function App() {
           <Route path="/Reset-Pass" element={<Reset />} />
 
           <Route path="/Profile" element={<Profile />} />
+
+          <Route path="/Home" element={<Home />} />
         </Routes>
       </BrowserRouter>
     </div>

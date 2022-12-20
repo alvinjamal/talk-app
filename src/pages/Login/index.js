@@ -7,23 +7,23 @@ import { useDispatch } from "react-redux";
 import Swal from "sweetalert2";
 
 export default function Login() {
-  // const [email, setEmail] = useState("");
-  // const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  // const navigate = useNavigate();
-  // const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  // const post = (e) => {
-  //   e.preventDefault();
-  //   console.log(email);
-  //   console.log(password);
-  //   let data = {
-  //     email,
-  //     password,
-  //   };
-  //   dispatch(LoginUser(data, navigate));
-  //   Swal.fire("Success", "Login Success,Returning to home", "success");
-  // };
+  const postData = (e) => {
+    e.preventDefault();
+    console.log(email);
+    console.log(password);
+    let data = {
+      email,
+      password,
+    };
+    dispatch(LoginUser(data, navigate));
+    Swal.fire("Success", "Login Success", "success");
+  };
 
   return (
     <div>
@@ -47,14 +47,14 @@ export default function Login() {
               <h5>Hi, Welcome back! </h5>
             </div>
             <div className="input ">
-              <Form className="container mb-3 col-8 mt-4 ">
+              <Form onSubmit={postData} className="container mb-3 col-8 mt-4 ">
                 <h5>E-mail</h5>
                 <input
                   type="email"
                   className="form-control mb-2"
                   name="email"
-                  // value={email}
-                  // onChange={(e) => setEmail(e.target.value)}
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   placeholder="Email"
                   style={{ height: "45px", width: "30rem" }}
                 />
@@ -63,8 +63,8 @@ export default function Login() {
                   type="password"
                   className="form-control mb-2"
                   name="password"
-                  // value={password}
-                  // onChange={(e) => setPassword(e.target.value)}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                   placeholder="Password"
                   style={{ height: "45px", width: "30rem" }}
                 />

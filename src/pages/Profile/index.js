@@ -22,8 +22,8 @@ export default function Profile() {
                       style={{ borderRadius: "5px", marginRight: "rem" }}
                     />
                     <div className="name mt-3">
-                      <h3>Alvin Jamal Azkya</h3>
-                      <p className="tag text-secondary">@vinn</p>
+                      <h3>Gloria Mckinney</h3>
+                      <p className="tag text-secondary">@wdlam</p>
                     </div>
                   </Button>
                 </div>
@@ -41,7 +41,7 @@ export default function Profile() {
               style={{ borderBottom: "1px solid", width: "30rem" }}
             />
             <div className="user mt-4" style={{ marginLeft: "2rem" }}>
-              <h5 style={{ fontWeight: "bold" }}>@vin</h5>
+              <h5 style={{ fontWeight: "bold" }}>@wdlam</h5>
               <p>Username</p>
             </div>
             <div
