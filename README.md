@@ -3,9 +3,6 @@
 <p className="text-center">
   <img height="150" src="https://github.com/alvinjamal/talk-app/blob/master/src/img/Telegram.png"  />
 </p>
-## Available Scripts
-
-In the project directory, you can run:
 
 ### Built With
 
