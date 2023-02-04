@@ -49,7 +49,7 @@ function ModalEdit() {
         console.log("Update Profile Success");
         console.log(res);
         Swal.fire({
-          title: "Logout Success",
+          title: "Update Profile Success",
           text: `Update Profile Success, Wait Refresh`,
           icon: "success",
           timer: "3000",
