@@ -89,3 +89,7 @@ cd talk-app
 ```
 npm install
 ```
+
+### be-talk-app
+
+Backend talk-app = https://github.com/alvinjamal/Be-talk
