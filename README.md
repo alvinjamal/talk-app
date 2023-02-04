@@ -13,15 +13,15 @@ This app was built with some technologies below:
 
 - [React Js](https://reactjs.org)
 - [Bootstrap](https://www.npmjs.com/package/bootstrap)
-- [Socket.io](https://socket.io)
-- [Sweetalert2](https://www.npmjs.com/package/sweetalert2)
-- [react-router-dom](https://www.npmjs.com/package/react-router-dom)
-- [Redux](https://www.npmjs.com/package/redux)
 - [React-redux](https://www.npmjs.com/package/react-redux)
 - [Redux-logger](https://www.npmjs.com/package/redux-logger)
-- [Redux-thunk](https://www.npmjs.com/search?q=redux-thunk)
+- [Socket.io](https://socket.io)
+- [Sweetalert2](https://www.npmjs.com/package/sweetalert2)
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS?retiredLocale=id)
 - [Javascript](https://www.javascript.com/)
+- [react-router-dom](https://www.npmjs.com/package/react-router-dom)
+- [Redux](https://www.npmjs.com/package/redux)
+- [Redux-thunk](https://www.npmjs.com/search?q=redux-thunk)
 
 # Getting Started with Create React App
 
