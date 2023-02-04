@@ -3,3 +3,8 @@
   margin-left: 3px;
   width: 4rem;
 }
+
+.bottom-input {
+  position: fixed;
+  bottom: 0;
+}

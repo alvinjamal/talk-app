@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import "../../index.css";
-import { LoginUser } from "../../redux/actions/login";
-import { useNavigate } from "react-router-dom";
+import { loginUser } from "../../redux/actions/login";
+import { useNavigate, Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import Swal from "sweetalert2";
+import Icon from "../../img/google.png";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -15,14 +15,11 @@ export default function Login() {
 
   const postData = (e) => {
     e.preventDefault();
-    console.log(email);
-    console.log(password);
     let data = {
       email,
       password,
     };
-    dispatch(LoginUser(data, navigate));
-    Swal.fire("Success", "Login Success", "success");
+    dispatch(loginUser(data, navigate));
   };
 
   return (
@@ -30,25 +27,30 @@ export default function Login() {
       <div
         className="border"
         style={{
-          height: "30rem",
-          marginTop: "6rem",
-          marginLeft: "17rem",
+          height: "38rem",
+          marginTop: "10%",
+          marginLeft: "20%",
           borderRadius: "15px",
         }}
       >
         <div className="row">
           <div className="container mt-5 col-7">
             <div className="text-primary mb-4">
-              <h4 style={{ marginLeft: "19rem", fontWeight: "bold" }}>
-                Login{" "}
+              <h4
+                style={{
+                  fontWeight: "bold",
+                  color: "#7E98DF",
+                }}
+              >
+                Login
               </h4>
             </div>
-            <div className=" mb-4" style={{ marginLeft: "9rem" }}>
+            <div className="text-center mb-4">
               <h5>Hi, Welcome back! </h5>
             </div>
             <div className="input ">
-              <Form onSubmit={postData} className="container mb-3 col-8 mt-4 ">
-                <h5>E-mail</h5>
+              <Form onSubmit={postData} className="container mb-3 col-9 mt-4 ">
+                <h5 className="text-start text-secondary">E-mail</h5>
                 <input
                   type="email"
                   className="form-control mb-2"
@@ -58,7 +60,7 @@ export default function Login() {
                   placeholder="Email"
                   style={{ height: "45px", width: "30rem" }}
                 />
-                <h5>Password</h5>
+                <h5 className="text-start text-secondary">Password</h5>
                 <input
                   type="password"
                   className="form-control mb-2"
@@ -70,18 +72,38 @@ export default function Login() {
                 />
                 <Button
                   type="submit"
-                  className="btn btn-primary text-white mt-3"
+                  className="btn text-white rounded-5 mt-3"
                   style={{
-                    position: "absolute",
-                    width: "20rem",
-                    height: "47px",
-                    marginLeft: "3rem",
-                    borderRadius: "10px",
+                    backgroundColor: "#7E98DF",
+                    width: "300px",
+                    height: "50px",
                   }}
                 >
                   Login
                 </Button>
               </Form>
+              <h6 className="my-4">Login with</h6>
+              <button
+                className="btn btn-new rounded-5 mt-3 mb-5"
+                style={{
+                  borderColor: "#7E98DF",
+                  color: "#7E98DF",
+                  width: "300px",
+                  height: "50px",
+                }}
+              >
+                <img src={Icon} alt="" className="me-3" />
+                Google
+              </button>
+              <Link
+                to="/Register"
+                style={{ textDecoration: "none", color: "black" }}
+              >
+                <h6 className="mb-4">
+                  Don’t have an account?{" "}
+                  <h6 style={{ color: "#7E98DF" }}>Sign Up</h6>
+                </h6>
+              </Link>
             </div>
           </div>
         </div>

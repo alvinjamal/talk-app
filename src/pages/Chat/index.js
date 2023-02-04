@@ -1,0 +1,324 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
+/* eslint-disable react-hooks/rules-of-hooks */
+import React from "react";
+import { useState, useEffect } from "react";
+import { io } from "socket.io-client";
+import "./style.css";
+import { Link } from "react-router-dom";
+import axios from "axios";
+import ModalEdit from "../../Components/ModalEdit";
+import { useNavigate } from "react-router-dom";
+import Menu from "../../img/Menu.png";
+
+function chatList() {
+  const [socketio, setSocketIo] = useState(null);
+  const [listchat, setListchat] = useState([]);
+  const [message, setMessage] = useState();
+  const [login, setLogin] = useState({});
+  const [list, setList] = useState([]);
+  const [activeReceiver, setActiveReceiver] = useState({});
+  const [activeChat, setActiveChat] = useState(1);
+  const [profile, setProfile] = useState([]);
+  const token = localStorage.getItem("token");
+  const users = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  const navigate = useNavigate();
+  const user = JSON.parse(localStorage.getItem("user"));
+  const self = user;
+  const friend = JSON.parse(localStorage.getItem("receiver"));
+  let getProfile = `${process.env.REACT_APP_URL_BASE}/users/detail`;
+  useEffect(() => {
+    axios
+      .get(getProfile, users)
+      .then((res) => {
+        console.log("Get profile success");
+        console.log(res.data.data[0]);
+        setProfile(res.data.data[0]);
+      })
+      .catch((err) => {
+        console.log("Get profile fail");
+        console.log(err);
+      });
+  }, []);
+
+  useEffect(() => {
+    const socket = io(process.env.REACT_APP_URL_BASE);
+    socket.on("send-message-response", (response) => {
+      const receiver = JSON.parse(localStorage.getItem("receiver"));
+
+      if (
+        receiver.username === response[0].sender ||
+        receiver.username === response[0].receiver
+      ) {
+        setListchat(response);
+      }
+      console.log("res", response);
+    });
+    setSocketIo(socket);
+  }, []);
+  const SubmitMessage = (e) => {
+    e.preventDefault();
+    const user = JSON.parse(localStorage.getItem("user"));
+    const receiver = JSON.parse(localStorage.getItem("receiver"));
+
+    const payload = {
+      sender: user?.username,
+      receiver: receiver?.username,
+      message,
+    };
+
+    setListchat([...listchat, payload]);
+
+    const data = {
+      sender: user?.id_user,
+      receiver: activeReceiver?.id_user,
+      message,
+    };
+
+    socketio.emit("send-message", data);
+
+    setMessage("");
+  };
+  const selectReceiver = (item) => {
+    setListchat([]);
+    setActiveReceiver(item);
+    setActiveChat(2);
+
+    localStorage.setItem("receiver", JSON.stringify(item));
+    socketio.emit("join-room", login);
+
+    const data = {
+      sender: login?.id_user,
+      receiver: item?.id_user,
+    };
+    console.log("ini data", data);
+    socketio.emit("chat-history", data);
+  };
+  console.log(self);
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("user"));
+    const data = user;
+    setLogin(user);
+    axios
+      .get(`${process.env.REACT_APP_URL_BASE}/users/all`)
+      .then((response) => {
+        console.log(response.data.data);
+        setList(response.data.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+  const handleLeaveChat = () => {
+    localStorage.clear();
+    navigate("/");
+    window.location.reload();
+  };
+  return (
+    <div>
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-md-3 mt-4">
+            <div className="row">
+              <div className="col-6">
+                <h4 style={{ color: "#7E98DF" }}>Talk App</h4>
+              </div>
+              <div className="col-3 offset-3">
+                <img src={Menu} alt="" />
+              </div>
+            </div>
+            <Link
+              to="/profile"
+              style={{ textDecoration: "none", color: "black" }}
+            >
+              <p className="mt-5">
+                <img
+                  src={profile.photo}
+                  alt=""
+                  className="rounded-4"
+                  style={{ height: "70px", width: "70px" }}
+                />
+              </p>
+              <h4 className="mt-3">{profile.name_user}</h4>
+              <h6 className="mt-2 text-secondary">@{profile.username}</h6>
+              <h6 className="mt-2 text-secondary">{profile.bio}</h6>
+            </Link>
+            <ModalEdit />
+            <input
+              type="search"
+              className="form-control"
+              placeholder="Type your message..."
+            />
+            <div className="row mt-4">
+              <div className="col-3">
+                <button className="btn">All</button>
+              </div>
+              <div className="col-5">
+                <button
+                  className="btn rounded-4"
+                  style={{ backgroundColor: "#7E98DF", color: "white" }}
+                >
+                  Important
+                </button>
+              </div>
+              <div className="col-3">
+                <button className="btn">Unread</button>
+              </div>
+            </div>
+            <button
+              className="btn text-white mt-4"
+              style={{ backgroundColor: "#7E98DF", marginLeft: "-30px" }}
+              onClick={handleLeaveChat}
+            >
+              Leave Chat
+            </button>
+            <div className="overflow-2">
+              {list?.map((user) => (
+                <div
+                  className="row mt-4"
+                  key={user.id_user}
+                  onClick={() => selectReceiver(user)}
+                >
+                  <div className="col-2">
+                    <img
+                      src={user.photo}
+                      alt=""
+                      className="rounded-4"
+                      style={{ height: "50px", width: "50px" }}
+                    />
+                  </div>
+                  <div className="col-7 offset-1">
+                    <h6 className="text-start">{user.name_user}</h6>
+                    <h6 className="text-start">{user.bio}</h6>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div
+            className="col-md-9"
+            style={{ backgroundColor: "#FAFAFA" }}
+            key={activeReceiver.id_user}
+          >
+            <div className="row bg-white">
+              <div className="col-1 ms-4 mt-4 mb-4">
+                <img
+                  src={activeReceiver.photo}
+                  alt=""
+                  className="rounded-4"
+                  style={{ height: "50px", width: "50px" }}
+                />
+              </div>
+              <div className="col-4" style={{ marginTop: "35px" }}>
+                <h6 style={{ marginLeft: "-282px" }}>
+                  {activeReceiver.username
+                    ? activeReceiver.username
+                    : "Tap Friend to Start Chat"}
+                </h6>
+                <h6
+                  style={{
+                    color: "#7E98DF",
+                    marginLeft: "-322px",
+                    fontSize: "13px",
+                  }}
+                >
+                  {activeReceiver.username ? "Online" : "Offline"}
+                </h6>
+              </div>
+              <div className="col-6" style={{ marginTop: "43px" }}>
+                <img src={Menu} alt="" style={{ marginLeft: "570px" }} />
+              </div>
+            </div>
+            <div className="overflow">
+              {listchat.map((item) => (
+                <div key={item.id_user}>
+                  {item.sender === login?.username ? (
+                    <div>
+                      <div
+                        className="text-end me-5 mt-4"
+                        style={{ color: "#7E98DF" }}
+                      >
+                        <p>You</p>
+                        <div
+                          className="btn text-white"
+                          style={{
+                            borderRadius: "12px 3px 12px 12px",
+                            backgroundColor: "#7E98DF",
+                            height: "50px",
+                          }}
+                        >
+                          <p>{item?.message}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
+                    <div>
+                      <div
+                        className="text-start me-5 mt-4"
+                        style={{ color: "#7E98DF" }}
+                      >
+                        <p>{item?.sender}</p>
+                        <div
+                          className="btn text-white"
+                          style={{
+                            borderRadius: "3px 12px 12px 12px",
+                            backgroundColor: "#7E98DF",
+                            height: "50px",
+                          }}
+                        >
+                          <p>{item?.message}</p>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+            <div className="bottom-input">
+              <form onSubmit={SubmitMessage}>
+                <div className="row ">
+                  <div className="col-10">
+                    <input
+                      type="text"
+                      value={message}
+                      name="message"
+                      placeholder="Masukan Text"
+                      onChange={(e) => setMessage(e.target.value)}
+                      style={{
+                        width: "900px",
+                        height: "40px",
+                        marginLeft: "5rem",
+                        backgroundColor: "#f5f5f5",
+                      }}
+                      className="form-control mb-3"
+                    />
+                  </div>
+                  <div className="col-1 offset-1 mb-5">
+                    <button
+                      style={{
+                        color: "white",
+                        backgroundColor: "#7E98DF",
+                        marginRight: "0px ",
+                        marginTop: "0px",
+                      }}
+                      type="submit"
+                      className="btn"
+                    >
+                      Kirim
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default chatList;

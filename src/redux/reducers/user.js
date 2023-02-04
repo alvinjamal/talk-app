@@ -1,14 +1,15 @@
 const initialState = {
   user: {
-    id: "",
+    id_user: "",
+    name_user: "",
     email: "",
-    fullname: "",
+    password: "",
     token: "",
   },
   isLoading: false,
 };
 
-const userReducer = (state = initialState, action) => {
+const UserReducer = (state = initialState, action) => {
   if (action.type === "USER_LOGIN_PENDING") {
     return {
       ...state,
@@ -25,4 +26,4 @@ const userReducer = (state = initialState, action) => {
   }
 };
 
-export default userReducer;
+export default UserReducer;

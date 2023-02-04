@@ -11,8 +11,8 @@ export default function Reset() {
         className="border"
         style={{
           height: "30rem",
-          marginTop: "6rem",
-          marginLeft: "17rem",
+          marginTop: "12%",
+          marginLeft: "20%",
           borderRadius: "15px",
         }}
       >
