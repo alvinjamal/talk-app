@@ -16,12 +16,12 @@ export const loginUser = (data, navigate) => async (dispact) => {
       timer: "3000",
       showConfirmButton: false,
     }).then(() => {
-      navigate("/Profile");
+      navigate("/Chat-List");
     });
   } catch (err) {
     Swal.fire({
       title: "Login Failed",
-      text: "Please login again using the correct email and password",
+      text: "Please Login again Please Correct Email and Password",
       icon: "error",
       timer: "3000",
       showConfirmButton: false,

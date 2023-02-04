@@ -2,17 +2,12 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 
 import React from "react";
-// import Asset from "../../img";
 import { useState, useEffect } from "react";
 import { io } from "socket.io-client";
 import "./profile.module.css";
 import { Link } from "react-router-dom";
 import { FaRegBell, FaLock } from "react-icons/fa";
-import {
-  BsFolder2Open,
-  BsFillChatSquareTextFill,
-  BsLaptop,
-} from "react-icons/bs";
+import { BsFolder2Open, BsFillChatSquareTextFill } from "react-icons/bs";
 import Swal from "sweetalert2";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -117,12 +112,12 @@ function Profile() {
               <BsFillChatSquareTextFill /> Chat settings
             </h6>
             <Button
-              className="text-start m-1 text-light"
-              // size="lg"
+              className="text-light"
+              style={{ marginRight: "18rem" }}
+              size="lg"
               onClick={() => logout()}
             >
-              {" "}
-              <BsLaptop /> Logout
+              Logout
             </Button>
           </div>
           <div className="col-md-9" style={{ backgroundColor: "#FAFAFA" }}>
@@ -131,7 +126,7 @@ function Profile() {
                 <img src={Image} alt="" />
               </div>
               <div className="col-3" style={{ marginTop: "35px" }}>
-                <h6 style={{ marginRight: "150px" }}>Theresa Webb</h6>
+                <h6 style={{ marginRight: "10rem" }}>Theresa Webb</h6>
                 <h6
                   style={{
                     color: "#7E98DF",
