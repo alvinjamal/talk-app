@@ -111,6 +111,6 @@ npm install
 | --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
 | ![Profile](https://github.com/alvinjamal/talk-app/blob/master/Image-Project/Profilr%20Page.PNG "Profile") | ![Edit Profile](https://github.com/alvinjamal/talk-app/blob/master/Image-Project/Edit%20Profile.PNG "Edit Profile") |
 
-### References Backend Talks
+### References Backend Talk
 
 be-talk : https://github.com/alvinjamal/Be-talk
