@@ -1,8 +1,11 @@
 # Talk-App
 
-<p className="text-center">
+<p align="center">
   <img height="150" src="https://github.com/alvinjamal/talk-app/blob/master/src/img/Telegram.png"  />
 </p>
+## Available Scripts
+
+In the project directory, you can run:
 
 ### Built With
 
@@ -10,15 +13,15 @@ This app was built with some technologies below:
 
 - [React Js](https://reactjs.org)
 - [Bootstrap](https://www.npmjs.com/package/bootstrap)
-- [React-redux](https://www.npmjs.com/package/react-redux)
-- [Redux-logger](https://www.npmjs.com/package/redux-logger)
 - [Socket.io](https://socket.io)
 - [Sweetalert2](https://www.npmjs.com/package/sweetalert2)
-- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS?retiredLocale=id)
-- [Javascript](https://www.javascript.com/)
 - [react-router-dom](https://www.npmjs.com/package/react-router-dom)
 - [Redux](https://www.npmjs.com/package/redux)
+- [React-redux](https://www.npmjs.com/package/react-redux)
+- [Redux-logger](https://www.npmjs.com/package/redux-logger)
 - [Redux-thunk](https://www.npmjs.com/search?q=redux-thunk)
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS?retiredLocale=id)
+- [Javascript](https://www.javascript.com/)
 
 # Getting Started with Create React App
 
@@ -90,7 +93,24 @@ cd talk-app
 npm install
 ```
 
-### be-talk-app
+## Screenshots
 
-Backend talk-app = https://github.com/alvinjamal/Be-talk
+| Register Page                                                                                                     | Verification Page                                                                                                            |
+| ----------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| ![Register](https://github.com/alvinjamal/talk-app/blob/master/Image-Project/Register%20Page.PNG "Register Page") | ![Verification](https://github.com/alvinjamal/talk-app/blob/master/Image-Project/Verificaton%20Page.PNG "Verification Page") |
 
+<hr />
+
+| Login                                                                                               | Chat Page                                                                                        |
+| --------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| ![Login](https://github.com/alvinjamal/talk-app/blob/master/Image-Project/Login%20Page.PNG "Login") | ![Chat](https://github.com/alvinjamal/talk-app/blob/master/Image-Project/Chat%20Page.PNG "Chat") |
+
+<hr />
+
+| Profile                                                                                                   | Edit Profile                                                                                                        |
+| --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| ![Profile](https://github.com/alvinjamal/talk-app/blob/master/Image-Project/Profilr%20Page.PNG "Profile") | ![Edit Profile](https://github.com/alvinjamal/talk-app/blob/master/Image-Project/Edit%20Profile.PNG "Edit Profile") |
+
+### References Backend Talks
+
+be-talk : https://github.com/alvinjamal/Be-talk
