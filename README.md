@@ -1,11 +1,20 @@
-# Talk-App
+<h1 align="center">Talk App</h1>
 
 <p align="center">
   <img height="150" src="https://github.com/alvinjamal/talk-app/blob/master/src/img/Telegram.png"  />
 </p>
-## Available Scripts
 
-In the project directory, you can run:
+## Table of Contents
+
+- [Built With](#built-with)
+- [Getting Started](#getting-started)
+  - [npm start](#npm-start)
+  - [npm test](#npm-test)
+  - [npm run build](#npm-run-build)
+  - [npm run eject](#npm-run-eject)
+  - [Installation](#installation)
+- [Screenshot](#screenshot)
+- [References Backend Talk](#references-backend-talk)
 
 ### Built With
 
@@ -55,24 +64,6 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-<!-- GETTING STARTED -->
-
 ## Getting Started
 
 ### Installation
@@ -93,7 +84,7 @@ cd talk-app
 npm install
 ```
 
-## Screenshots
+## Screenshot
 
 | Register Page                                                                                                     | Verification Page                                                                                                            |
 | ----------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
@@ -111,6 +102,6 @@ npm install
 | --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
 | ![Profile](https://github.com/alvinjamal/talk-app/blob/master/Image-Project/Profilr%20Page.PNG "Profile") | ![Edit Profile](https://github.com/alvinjamal/talk-app/blob/master/Image-Project/Edit%20Profile.PNG "Edit Profile") |
 
-### References Backend Talks
+### References Backend Talk
 
 be-talk : https://github.com/alvinjamal/Be-talk
